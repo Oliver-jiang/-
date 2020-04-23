@@ -3,5 +3,10 @@
    import numpy as np
    mpl.use('Agg')  #如果在服务器上运行代码，需要加上这句
    
-   a=numpy.array
+   import matplotlib.pyplot as plt
    
+   a=numpy.array
+   p=plt.imshow(X)   #绘制
+   plt.colorbar(p)   #热力图图标
+   plt.show()        #显示
+   plt.savefig('path')
