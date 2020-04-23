@@ -1,0 +1,4 @@
+1 转换数组类型
+  a=numpy.array(..)  #a.dtype=int
+  #转换成float
+  a=a.astype(float)
