@@ -1,0 +1,7 @@
+1. 绘制热力图heat map
+   import matplotlib as mpl
+   import numpy as np
+   mpl.use('Agg')  #如果在服务器上运行代码，需要加上这句
+   
+   a=numpy.array
+   
