@@ -1,0 +1,14 @@
+1. os.walk() 方法用于通过在目录树中游走输出在目录中的文件名，向上或者向下（需要排序）
+   walk()方法语法格式如下：
+       os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])
+   #top -- 是你所要遍历的目录的地址, 返回的是一个三元组(root,dirs,files)。
+   #root 所指的是当前正在遍历的这个文件夹的本身的地址
+   #dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)
+   #files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)
+   
+   #按顺序返回目录与文件
+   for looproot, _, filenames in os.walk(rootdir):
+            filenames.sort()  #需要排序
+            for filename in filenames:
+                lst.append(os.path.join(looproot,filename))
+        return lst
