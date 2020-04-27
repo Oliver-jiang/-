@@ -1,0 +1,26 @@
+1 安装anaconda或者miniconda：
+  wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+2 安装pip：
+  $ wget https://bootstrap.pypa.io/get-pip.py
+  $ python get-pip.py
+  $ pip -V　　#查看pip版本
+3 创建环境：
+  conda create -n your_env_name python=X.X（2.7、3.6等）
+4 激活环境：
+  source activate your_env_name
+5 安装框架，以pytorch为例：
+ 5.1 查看CUDA版本：
+  cat /usr/local/cuda/version.txt
+ 5.2 添加国内镜像源：
+ （仓库）conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+ （仓库）conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+ （pytorch）conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  conda config --set show_channel_urls yes
+ 5.3 安装pytorch torchvision：
+  conda install pytorch（=1.3.0） torchvision cudatoolkit=10.1
+6 安装第三方库：
+  conda install XXXX
+  pip install XXXX
+7 查看已安装库：
+  conda list
+  pip list
