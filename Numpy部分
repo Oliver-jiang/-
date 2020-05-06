@@ -2,3 +2,13 @@
   a=numpy.array(..)  #a.dtype=int
   #转换成float
   a=a.astype(float)
+2 在运行代码时还出现过这个错误：
+  RuntimeError: Expected object of scalar type Long but got scalar type Float for argument #2 'target'
+  研究了一下，发现是关于label的错误。修改办法总结一下：
+  错误位置：
+  Loss = torch.nn.CrossEntropyLoss()
+  loss = Loss(out, label)
+  修改的时候，直接在label后面加上.long()，如下所示：
+  Loss = torch.nn.CrossEntropyLoss()
+  loss = Loss(out, label.long())
+  多次报这个错误后发现，它说是什么类型，直接在label后面加上对应的类型即可。
